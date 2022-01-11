@@ -77,9 +77,12 @@ class IllustrationController {
             notFound()
             return
         }
-
-        illustrationService.delete(id)
-
+        def illustration = Illustration.get(id)
+        def saleAdId = illustration.ad.id
+        def filename = illustration.filename
+        def file = new File(grailsApplication.config.assets.path + filename)
+        file.delete()
+        illustration.delete(flush: true)
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'illustration.label', default: 'Illustration'), id])
@@ -87,6 +90,7 @@ class IllustrationController {
             }
             '*'{ render status: NO_CONTENT }
         }
+        redirect controller:"saleAd", id:saleAdId ,action:"edit", method:"GET"
     }
 
     protected void notFound() {

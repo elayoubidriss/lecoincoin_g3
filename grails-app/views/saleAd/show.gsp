@@ -63,7 +63,7 @@
                         <ul>
                             <g:each in="${saleAd.illustrations}" var="illustration">
                                 <li>
-                                    <img src="${grailsApplication.config.assets.url+illustration.filename}" alt="illustration"/>
+                                    <img src="${grailsApplication.config.assets.url+illustration.filename}"/>
                                 </li>
                             </g:each>
                         </ul>

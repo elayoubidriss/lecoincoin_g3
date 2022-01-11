@@ -130,5 +130,5 @@ environments:
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
 
 assets:
-    path: D:\MBDS_GRAILS\lecoincoin_g3\grails-app\assets\images
+    path: D:\MBDS_GRAILS\lecoincoin_g3\grails-app\assets\images\
     url: http://localhost:8082/assets/

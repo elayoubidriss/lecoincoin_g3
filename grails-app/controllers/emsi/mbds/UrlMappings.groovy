@@ -8,9 +8,9 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')
+        "/saleAd/authorIndex/$name"(controller: "saleAd", action: "authorIndex")
     }
 }
